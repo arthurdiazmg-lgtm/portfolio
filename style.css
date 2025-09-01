@@ -19,6 +19,30 @@ body {
   opacity: 0.4;
 }
 
+/* Botão de idioma */
+.lang-switch {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.lang-switch button {
+  background: black;
+  color: cyan;
+  border: 1px solid cyan;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.lang-switch button:hover {
+  background: cyan;
+  color: black;
+}
+
 /* Cabeçalho */
 header {
   text-align: center;
@@ -26,8 +50,8 @@ header {
 }
 
 header .perfil {
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   border: 4px solid cyan;
   box-shadow: 0 0 20px cyan;
@@ -63,7 +87,13 @@ header .perfil {
   box-shadow: 0 0 20px cyan;
   padding: 20px;
   margin: 20px auto;
-  max-width: 600px;
+  max-width: 80%; /* Mais largo no PC */
+}
+
+@media (max-width: 768px) {
+  .card {
+    max-width: 95%; /* No celular quase tela cheia */
+  }
 }
 
 .card h2 {
