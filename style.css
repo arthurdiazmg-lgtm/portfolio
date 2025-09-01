@@ -1,4 +1,4 @@
-/* Reset básico */
+/* ===== Reset ===== */
 * {
   margin: 0;
   padding: 0;
@@ -6,150 +6,165 @@
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Courier New', monospace;
+  background: #000814;
+  color: #00f7ff;
+  text-align: center;
   line-height: 1.6;
-  background: #f9f9f9;
-  color: #333;
+  overflow-x: hidden;
 }
 
-/* Container padrão */
+/* ===== Container ===== */
 .container {
   width: 90%;
-  max-width: 1100px;
+  max-width: 1000px;
   margin: auto;
-  padding: 20px 0;
+  padding: 40px 0;
 }
 
-/* Header */
-.header {
-  background: #111;
-  color: white;
-  padding: 15px 0;
-}
-
-.header .logo {
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: #fff;
-  text-decoration: none;
-}
-
-.header .menu {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-.header .menu a {
-  color: #fff;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.header .menu a:hover {
-  color: #00bcd4;
-}
-
-/* Hero */
-.hero {
-  text-align: center;
-  padding: 50px 20px;
-}
-
-.hero h1 {
-  font-size: 2rem;
-  margin: 15px 0;
-}
-
-.hero h1 span {
-  color: #00bcd4;
-}
-
-.hero p {
-  margin-bottom: 20px;
-  color: #555;
-}
-
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background: #00bcd4;
-  color: #fff;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background: #0097a7;
-}
-
-/* Foto perfil */
-.foto-perfil {
-  width: 180px;
-  height: 180px;
+/* ===== Foto ===== */
+img {
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid #00bcd4;
+  border: 3px solid #00f7ff;
+  box-shadow: 0 0 30px #00f7ff, 0 0 60px #0066ff inset;
+  margin-bottom: 20px;
+  animation: pulse-glow 3s infinite alternate;
 }
 
-/* Seções */
-section {
-  margin: 40px 0;
+/* ===== Títulos ===== */
+h1, h2 {
+  text-shadow: 0 0 10px #00f7ff, 0 0 20px #0066ff;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #00f7ff;
 }
 
 h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #222;
+  font-size: 1.8rem;
+  color: #00c4ff;
+  border-bottom: 2px solid #00f7ff;
+  display: inline-block;
+  padding-bottom: 5px;
 }
 
-/* Projetos */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+/* ===== Texto ===== */
+p, li, a {
+  font-size: 1.1rem;
+  color: #b3e5ff;
+  margin-bottom: 10px;
 }
 
-.card {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+a {
+  text-decoration: none;
+  color: #00f7ff;
   transition: 0.3s;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-}
-
-/* Contato */
-.contato {
-  text-align: center;
-}
-
-.contato a {
-  color: #00bcd4;
-  text-decoration: none;
-}
-
-.contato a:hover {
-  text-decoration: underline;
-}
-
-/* Footer */
-.footer {
-  text-align: center;
-  padding: 20px;
-  background: #111;
+a:hover {
   color: #fff;
-  margin-top: 40px;
+  text-shadow: 0 0 10px #00f7ff;
 }
 
-.foto-perfil {
-    width: 180px;       /* tamanho da foto */
-    height: 180px;
-    border-radius: 50%; /* deixa a foto redonda */
-    object-fit: cover;  /* ajusta sem distorcer */
-    margin-bottom: 20px; /* espaço abaixo da foto */
+/* ===== Botão idioma ===== */
+#lang-btn {
+  background: transparent;
+  border: 2px solid #00f7ff;
+  color: #00f7ff;
+  font-size: 1rem;
+  padding: 8px 16px;
+  margin: 15px 0;
+  cursor: pointer;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #00f7ff;
+  transition: 0.3s;
+}
+
+#lang-btn:hover {
+  background: #00f7ff;
+  color: #000;
+  box-shadow: 0 0 20px #00f7ff, 0 0 40px #0066ff;
+}
+
+/* ===== Seções ===== */
+section {
+  margin: 40px 0;
+  padding: 20px;
+  border: 2px solid #00f7ff;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #00f7ff inset, 0 0 30px #0066ff;
+  background: rgba(0, 10, 30, 0.6);
+  backdrop-filter: blur(5px);
+}
+
+/* ===== Formulário ===== */
+#form-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+input, select, textarea {
+  background: #000;
+  color: #00f7ff;
+  border: 2px solid #00f7ff;
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 1rem;
+  box-shadow: 0 0 10px #00f7ff inset;
+  transition: 0.3s;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  box-shadow: 0 0 15px #00f7ff, 0 0 30px #0066ff;
+  border-color: #fff;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* ===== Botão formulário ===== */
+#contact-form button {
+  background: #00f7ff;
+  color: #000;
+  font-weight: bold;
+  padding: 12px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  box-shadow: 0 0 20px #00f7ff, 0 0 40px #0066ff;
+  transition: 0.3s;
+}
+
+#contact-form button:hover {
+  background: #fff;
+  color: #000;
+  box-shadow: 0 0 30px #00f7ff, 0 0 60px #0066ff;
+  transform: scale(1.05);
+}
+
+/* ===== Animações ===== */
+@keyframes pulse-glow {
+  from {
+    box-shadow: 0 0 20px #00f7ff, 0 0 40px #0066ff inset;
+  }
+  to {
+    box-shadow: 0 0 40px #00f7ff, 0 0 80px #0066ff inset;
+  }
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.4rem; }
+  img { width: 150px; height: 150px; }
 }
