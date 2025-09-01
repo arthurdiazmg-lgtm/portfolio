@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfólio - Arthur Guimarães</title>
-  <meta name="description" content="Portfólio de Arthur Guimarães - Técnico de Operações N1 e estudante de ADS. Back-End, Cloud e DevOps."/>
-  <link rel="stylesheet" href="style.css"/>
+  <meta name="description" content="Portfólio de Arthur Guimarães - Técnico de Operações N1 e estudante de ADS.">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Header / Navbar -->
+  <!-- Header -->
   <header class="header">
     <nav class="nav container">
       <a href="#" class="logo">Arthur Guimarães</a>
@@ -22,88 +22,52 @@
 
   <!-- Hero -->
   <section class="hero container">
-    <div class="hero-text">
-      <h1>Olá! 👋 Sou Arthur Guimarães</h1>
-      <p class="subtitle">
-        🎓 Estudante de ADS (penúltimo semestre) · 💻 Técnico de Operações N1 na Central IT <br/>
-        Foco em <strong>Back-End</strong>, <strong>Cloud</strong> e <strong>DevOps</strong>.
-      </p>
-      <div class="cta">
-        <a class="btn" href="#projetos">Ver projetos</a>
-        <a class="btn btn-outline" href="#contato">Fale comigo</a>
+    <img src="arthur.jpg" alt="Foto de Arthur Guimarães" class="foto-perfil">
+    <h1>Olá, eu sou o <span>Arthur Guimarães</span> 👋</h1>
+    <p>🎓 Estudante de ADS | 💻 Técnico de Operações N1 | 🚀 Aprendendo Python & Back-End | ☁️ Focado em Cloud e DevOps</p>
+    <a href="#contato" class="btn">Entre em contato</a>
+  </section>
+
+  <!-- Sobre -->
+  <section id="sobre" class="sobre container">
+    <h2>Sobre Mim</h2>
+    <p>
+      Sou estudante de Análise e Desenvolvimento de Sistemas (penúltimo semestre) e atuo como Técnico de Operações N1. 
+      Tenho experiência com suporte técnico e atualmente estou focado em aprender <strong>Python</strong>, 
+      desenvolvimento <strong>Back-End</strong>, além de aprofundar meus conhecimentos em <strong>Cloud</strong> e <strong>DevOps</strong>.
+    </p>
+  </section>
+
+  <!-- Projetos -->
+  <section id="projetos" class="projetos container">
+    <h2>Projetos</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Projeto 1</h3>
+        <p>Exemplo de projeto em HTML, CSS e JS.</p>
+      </div>
+      <div class="card">
+        <h3>Projeto 2</h3>
+        <p>Exemplo de script em Python.</p>
+      </div>
+      <div class="card">
+        <h3>Projeto 3</h3>
+        <p>Aplicação em desenvolvimento com foco em Cloud.</p>
       </div>
     </div>
   </section>
 
-  <!-- Sobre -->
-  <section id="sobre" class="section container">
-    <h2>Sobre mim</h2>
-    <p>
-      Sou apaixonado por tecnologia e solução de problemas. Atualmente curso Análise e Desenvolvimento de Sistemas
-      e trabalho como Técnico de Operações N1 na Central IT. Estou estudando Python e desenvolvimento Back-End, com
-      grande interesse em Cloud e práticas de DevOps.
-    </p>
-    <div class="badges">
-      <span class="badge">Python</span>
-      <span class="badge">JavaScript</span>
-      <span class="badge">HTML</span>
-      <span class="badge">CSS</span>
-      <span class="badge">Git & GitHub</span>
-      <span class="badge">Linux</span>
-    </div>
-  </section>
-
-  <!-- Projetos -->
-  <section id="projetos" class="section container">
-    <h2>Projetos</h2>
-    <div class="grid">
-      <!-- Card 1 -->
-      <article class="card">
-        <h3>Gerenciador de Tarefas</h3>
-        <p>Aplicação em Python para organizar tarefas com persistência em banco de dados.</p>
-        <div class="card-actions">
-          <a class="link" href="https://github.com/arthurdiazmg-lgtm/task-manager" target="_blank" rel="noopener">Ver no GitHub</a>
-        </div>
-      </article>
-
-      <!-- Card 2 -->
-      <article class="card">
-        <h3>Portfólio</h3>
-        <p>Este site pessoal hospedado no GitHub Pages, com HTML, CSS e JS.</p>
-        <div class="card-actions">
-          <a class="link" href="https://arthurdiazmg-lgtm.github.io/portfolio" target="_blank" rel="noopener">Abrir site</a>
-          <a class="link" href="https://github.com/arthurdiazmg-lgtm/portfolio" target="_blank" rel="noopener">Repositório</a>
-        </div>
-      </article>
-
-      <!-- Card 3 (exemplo extra) -->
-      <article class="card">
-        <h3>Script de Automação</h3>
-        <p>Pequenas automações em Python/Batch para rotinas de suporte e operações.</p>
-        <div class="card-actions">
-          <a class="link" href="https://github.com/arthurdiazmg-lgtm" target="_blank" rel="noopener">Ver exemplos</a>
-        </div>
-      </article>
-    </div>
-  </section>
-
   <!-- Contato -->
-  <section id="contato" class="section container">
+  <section id="contato" class="contato container">
     <h2>Contato</h2>
-    <div class="contacts">
-      <p>📧 <a class="link" href="mailto:arthurdiazmg@gmail.com">arthurdiazmg@gmail.com</a></p>
-      <p>💼 <a class="link" href="https://linkedin.com/in/arthurdiazmg" target="_blank" rel="noopener">LinkedIn</a></p>
-      <p>💻 <a class="link" href="https://github.com/arthurdiazmg-lgtm" target="_blank" rel="noopener">GitHub</a></p>
-      <p>📸 <a class="link" href="https://www.instagram.com/arthurdmoont" target="_blank" rel="noopener">instagram.com/arthurdmoont</a></p>
-    </div>
+    <p>📍 Brasília - Brasil</p>
+    <p>📧 Email: seuemail@gmail.com</p>
+    <p>🔗 <a href="https://www.linkedin.com/in/seu-linkedin" target="_blank">LinkedIn</a> | 
+       <a href="https://www.instagram.com/arthurdmoont" target="_blank">Instagram</a></p>
   </section>
 
   <footer class="footer">
-    <div class="container">
-      <p>© <span id="year"></span> — Arthur Guimarães</p>
-    </div>
+    <p>© 2025 - Desenvolvido por Arthur Guimarães</p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
