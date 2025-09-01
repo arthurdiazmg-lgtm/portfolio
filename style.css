@@ -145,3 +145,11 @@ h2 {
   color: #fff;
   margin-top: 40px;
 }
+
+.foto-perfil {
+    width: 180px;       /* tamanho da foto */
+    height: 180px;
+    border-radius: 50%; /* deixa a foto redonda */
+    object-fit: cover;  /* ajusta sem distorcer */
+    margin-bottom: 20px; /* espaço abaixo da foto */
+}
