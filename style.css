@@ -168,3 +168,13 @@ textarea {
   h2 { font-size: 1.4rem; }
   img { width: 150px; height: 150px; }
 }
+/* ===== Matrix Effect ===== */
+#matrix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Fica atrás de tudo */
+  background: black;
+}
