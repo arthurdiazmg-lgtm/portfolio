@@ -3,112 +3,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arthur Monteiro | Full Stack Developer</title>
+  <title>Arthur Monteiro | Fullstack Developer</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Fonte hacker futurista -->
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Fundo Matrix -->
   <canvas id="matrix"></canvas>
 
-  <!-- Container principal -->
-  <div class="container">
-    <div class="profile">
-      <img src="arthur.jpg" alt="Arthur Monteiro" class="profile-pic">
-      <h1 id="typing"></h1>
-      <p class="subtitle">💻 Desenvolvedor Full Stack | Marketing Digital 🚀</p>
-    </div>
+  <!-- Hero Section -->
+  <header class="hero">
+    <img src="minha-foto.jpg" alt="Arthur Monteiro" class="profile-pic">
+    <h1>Arthur Monteiro</h1>
+    <h2>💻 Fullstack Developer | 🚀 Criador de Soluções</h2>
+    <p class="subtitle">Front-end & Back-end | Marketing Digital | E-commerce</p>
+  </header>
 
+  <main class="container">
     <!-- Sobre mim -->
-    <section class="about">
+    <section id="sobre">
       <h2>👨‍💻 Sobre mim</h2>
       <p>
-        Sou desenvolvedor Full Stack apaixonado por tecnologia, com experiência em front-end e back-end.  
-        Além da programação, já criei e gerenciei lojas de e-commerce (Shopify), incluindo dropshipping e nichos de saúde, beleza e cultura japonesa.  
-        Estou em constante aprendizado, pois para mim **não há limite para conhecimento**.
+        Sou desenvolvedor Fullstack com experiência em front-end e back-end, além de marketing digital e e-commerce. 
+        Já criei lojas na Shopify e projetos de dropshipping em nichos variados. 
+        Estou em constante evolução, buscando sempre unir tecnologia e inovação para criar soluções reais. 
       </p>
     </section>
 
     <!-- Projetos -->
-    <section class="projects">
+    <section id="projetos" class="projects">
       <h2>🚀 Projetos</h2>
       <ul>
-        <li><a href="#">LoveIsBeautiful – Loja própria no nicho de saúde e beleza</a></li>
-        <li><a href="#">Dropshipping – Artigos japoneses e animes</a></li>
-        <li><a href="#">Portfólio – Este site que você está navegando ✨</a></li>
+        <li><a href="#">💡 LoveIsBeautiful – Loja de saúde & beleza</a></li>
+        <li><a href="#">🛒 Loja Anime – Dropshipping temático</a></li>
+        <li><a href="#">📂 Portfólio – Este site com pegada futurista</a></li>
       </ul>
     </section>
 
     <!-- Contato -->
-    <section class="contact">
-      <h2>📩 Contato</h2>
+    <section id="contato">
+      <h2>📬 Contato</h2>
       <p>Email: <a href="mailto:arthurdiaz.mg@gmail.com">arthurdiaz.mg@gmail.com</a></p>
-      <p>WhatsApp: <a href="https://api.whatsapp.com/send?phone=5561982155039&text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es!!" target="_blank">+55 61 98215-5039</a></p>
+      <p>WhatsApp: <a href="https://api.whatsapp.com/send?phone=5561982155039&text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es!!" target="_blank">+55 (61) 98215-5039</a></p>
     </section>
 
     <!-- Formulário -->
-    <section class="form">
-      <h2>💬 Fale comigo</h2>
-      <form action="https://api.whatsapp.com/send" method="get" target="_blank">
-        <input type="hidden" name="phone" value="5561982155039">
-        <textarea name="text" placeholder="Digite sua mensagem..." required></textarea>
+    <section id="form">
+      <h2>📝 Fale comigo</h2>
+      <form onsubmit="enviarWhatsApp(event)">
+        <textarea id="mensagem" placeholder="Digite sua mensagem aqui..."></textarea>
         <button type="submit">Enviar no WhatsApp</button>
       </form>
     </section>
-  </div>
+  </main>
 
-  <!-- Efeito Matrix -->
   <script>
+    // Redireciona mensagem para WhatsApp
+    function enviarWhatsApp(e) {
+      e.preventDefault();
+      const msg = document.getElementById("mensagem").value;
+      const url = "https://api.whatsapp.com/send?phone=5561982155039&text=" + encodeURIComponent(msg);
+      window.open(url, "_blank");
+    }
+
+    // Fundo Matrix
     const canvas = document.getElementById("matrix");
     const ctx = canvas.getContext("2d");
     canvas.height = window.innerHeight;
     canvas.width = window.innerWidth;
-
-    const letters = "01ABCDEFGHIJKLMNOPQRSTUVWXYZアカサタナハマヤラワ0123456789";
-    const matrix = letters.split("");
-    const fontSize = 16;
+    const letters = "01".split("");
+    const fontSize = 14;
     const columns = canvas.width / fontSize;
     const drops = [];
-
     for (let x = 0; x < columns; x++) drops[x] = 1;
-
     function draw() {
       ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      ctx.fillStyle = "#00f7ff"; 
-      ctx.font = fontSize + "px Share Tech Mono";
-
+      ctx.fillStyle = "#00f7ff";
+      ctx.font = fontSize + "px monospace";
       for (let i = 0; i < drops.length; i++) {
-        const text = matrix[Math.floor(Math.random() * matrix.length)];
+        const text = letters[Math.floor(Math.random() * letters.length)];
         ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-          drops[i] = 0;
-        }
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
         drops[i]++;
       }
     }
-    setInterval(draw, 40);
-    window.addEventListener("resize", () => {
-      canvas.height = window.innerHeight;
-      canvas.width = window.innerWidth;
-    });
-  </script>
-
-  <!-- Efeito de digitação -->
-  <script>
-    const text = "Olá, eu sou Arthur Monteiro 🚀";
-    let i = 0;
-    function typing() {
-      if (i < text.length) {
-        document.getElementById("typing").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typing, 100);
-      }
-    }
-    typing();
+    setInterval(draw, 35);
   </script>
 </body>
 </html>
