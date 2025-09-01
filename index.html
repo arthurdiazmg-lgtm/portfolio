@@ -3,91 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arthur Monteiro | Fullstack Developer</title>
+  <title>Arthur Monteiro - Portfólio</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
-  <canvas id="matrix"></canvas>
+  <div class="matrix"></div>
 
-  <!-- Hero Section -->
   <header class="hero">
-    <img src="minha-foto.jpg" alt="Arthur Monteiro" class="profile-pic">
-    <h1>Arthur Monteiro</h1>
-    <h2>💻 Fullstack Developer | 🚀 Criador de Soluções</h2>
-    <p class="subtitle">Front-end & Back-end | Marketing Digital | E-commerce</p>
+    <div class="hero-content">
+      <img src="perfil.png" alt="Arthur Monteiro" class="profile-pic" />
+      <h1>Arthur Monteiro</h1>
+      <h2>💻 Fullstack Developer | 🛠️ Criador de Soluções</h2>
+      <p>Front-end & Back-end | Marketing Digital | E-commerce</p>
+    </div>
   </header>
 
-  <main class="container">
-    <!-- Sobre mim -->
-    <section id="sobre">
-      <h2>👨‍💻 Sobre mim</h2>
+  <main>
+    <section class="card">
+      <h2>🚀 Sobre mim</h2>
       <p>
         Sou desenvolvedor Fullstack com experiência em front-end e back-end, além de marketing digital e e-commerce. 
-        Já criei lojas na Shopify e projetos de dropshipping em nichos variados. 
-        Estou em constante evolução, buscando sempre unir tecnologia e inovação para criar soluções reais. 
+        Já criei lojas na Shopify e projetos de dropshipping em nichos variados. Estou em constante evolução, 
+        buscando sempre unir tecnologia e inovação para criar soluções reais.
       </p>
     </section>
 
-    <!-- Projetos -->
-    <section id="projetos" class="projects">
-      <h2>🚀 Projetos</h2>
+    <section class="card">
+      <h2>📂 Projetos</h2>
       <ul>
-        <li><a href="#">💡 LoveIsBeautiful – Loja de saúde & beleza</a></li>
-        <li><a href="#">🛒 Loja Anime – Dropshipping temático</a></li>
-        <li><a href="#">📂 Portfólio – Este site com pegada futurista</a></li>
+        <li>💖 <strong>LovesBeautiful</strong> – Loja de saúde & beleza</li>
+        <li>🎌 <strong>Loja Anime</strong> – Dropshipping temático</li>
+        <li>💻 <strong>Portfólio</strong> – Este site com pegada futurista</li>
       </ul>
     </section>
 
-    <!-- Contato -->
-    <section id="contato">
-      <h2>📬 Contato</h2>
+    <section class="card">
+      <h2>📞 Contato</h2>
       <p>Email: <a href="mailto:arthurdiaz.mg@gmail.com">arthurdiaz.mg@gmail.com</a></p>
-      <p>WhatsApp: <a href="https://api.whatsapp.com/send?phone=5561982155039&text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es!!" target="_blank">+55 (61) 98215-5039</a></p>
-    </section>
-
-    <!-- Formulário -->
-    <section id="form">
-      <h2>📝 Fale comigo</h2>
-      <form onsubmit="enviarWhatsApp(event)">
-        <textarea id="mensagem" placeholder="Digite sua mensagem aqui..."></textarea>
-        <button type="submit">Enviar no WhatsApp</button>
-      </form>
+      <p>WhatsApp: <a href="https://wa.me/5561980215039" target="_blank">+55 (61) 98021-5039</a></p>
     </section>
   </main>
 
-  <script>
-    // Redireciona mensagem para WhatsApp
-    function enviarWhatsApp(e) {
-      e.preventDefault();
-      const msg = document.getElementById("mensagem").value;
-      const url = "https://api.whatsapp.com/send?phone=5561982155039&text=" + encodeURIComponent(msg);
-      window.open(url, "_blank");
-    }
-
-    // Fundo Matrix
-    const canvas = document.getElementById("matrix");
-    const ctx = canvas.getContext("2d");
-    canvas.height = window.innerHeight;
-    canvas.width = window.innerWidth;
-    const letters = "01".split("");
-    const fontSize = 14;
-    const columns = canvas.width / fontSize;
-    const drops = [];
-    for (let x = 0; x < columns; x++) drops[x] = 1;
-    function draw() {
-      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = "#00f7ff";
-      ctx.font = fontSize + "px monospace";
-      for (let i = 0; i < drops.length; i++) {
-        const text = letters[Math.floor(Math.random() * letters.length)];
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
-        drops[i]++;
-      }
-    }
-    setInterval(draw, 35);
-  </script>
+  <footer>
+    <p>Feito com 💙 por Arthur Monteiro</p>
+  </footer>
 </body>
 </html>
