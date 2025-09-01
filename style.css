@@ -1,14 +1,14 @@
-/* Fonte global */
+/* Fonte futurista */
 body {
   margin: 0;
-  padding: 0;
   font-family: 'Share Tech Mono', monospace;
-  background: black;
-  color: #fff;
+  background: #000;
+  color: #e0e0e0;
+  text-align: center;
   overflow-x: hidden;
 }
 
-/* Fundo Matrix ocupa toda tela */
+/* Canvas Matrix no fundo */
 #matrix {
   position: fixed;
   top: 0;
@@ -16,60 +16,66 @@ body {
   z-index: -1;
 }
 
-/* Container centralizado */
+/* Hero Section */
+.hero {
+  padding: 80px 20px 50px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: #00f7ff;
+  text-shadow: 0 0 20px #00f7ff, 0 0 40px #0088ff;
+}
+
+.hero h2 {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  color: #fff;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #aaa;
+  margin-top: 10px;
+}
+
+/* Foto redonda */
+.profile-pic {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 4px solid #00f7ff;
+  box-shadow: 0 0 30px #00f7ff;
+  margin-bottom: 20px;
+  object-fit: cover;
+}
+
+/* Container geral */
 .container {
   max-width: 900px;
   margin: 0 auto;
-  padding: 40px;
-  text-align: center;
-}
-
-/* Foto de perfil futurista */
-.profile-pic {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid #00f7ff;
-  box-shadow: 0 0 25px #00f7ff, 0 0 50px #0077ff;
-  margin-bottom: 20px;
-  transition: transform 0.3s ease;
-}
-.profile-pic:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 40px #00f7ff, 0 0 70px #0077ff;
-}
-
-/* Títulos */
-h1, h2 {
-  color: #00f7ff;
-  text-shadow: 0 0 10px #00f7ff, 0 0 20px #0077ff;
-  margin-bottom: 20px;
-}
-.subtitle {
-  font-size: 1.2rem;
-  color: #ccc;
-  margin-bottom: 40px;
+  padding: 30px 20px;
 }
 
 /* Seções */
 section {
-  margin: 50px 0;
-  padding: 20px;
-  background: rgba(0,0,0,0.6);
-  border: 1px solid #00f7ff;
+  margin: 60px 0;
+  padding: 30px;
   border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0,247,255,0.3);
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 15px #00f7ff44;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Links neon */
-a {
-  color: #00f7ff;
-  text-decoration: none;
-  transition: 0.3s;
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px #00f7ff99;
 }
-a:hover {
-  color: #fff;
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #00f7ff;
   text-shadow: 0 0 10px #00f7ff;
 }
 
@@ -78,52 +84,86 @@ a:hover {
   list-style: none;
   padding: 0;
 }
+
 .projects li {
-  margin: 10px 0;
+  margin: 15px 0;
 }
 
-/* Botão futurista */
-button {
-  background: black;
-  border: 2px solid #00f7ff;
+.projects a {
+  text-decoration: none;
+  font-size: 1.1rem;
   color: #00f7ff;
-  padding: 12px 25px;
-  font-size: 1rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.3s;
-  text-transform: uppercase;
-  font-weight: bold;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
-button:hover {
-  background: #00f7ff;
-  color: black;
-  box-shadow: 0 0 20px #00f7ff, 0 0 40px #0077ff;
+
+.projects a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff;
+}
+
+/* Links de contato */
+#contato a {
+  color: #00f7ff;
+  text-decoration: none;
+}
+
+#contato a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px #00f7ff;
 }
 
 /* Formulário */
-textarea {
-  width: 100%;
-  height: 120px;
-  background: rgba(0,0,0,0.8);
-  border: 2px solid #00f7ff;
-  border-radius: 8px;
-  padding: 12px;
-  font-family: 'Share Tech Mono', monospace;
-  color: #fff;
-  resize: none;
-  margin-bottom: 15px;
-}
-textarea:focus {
-  outline: none;
-  box-shadow: 0 0 20px #00f7ff;
+#form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Animação suave ao aparecer */
-.container, section {
-  animation: fadeIn 1.5s ease-in-out;
+#form textarea {
+  width: 100%;
+  max-width: 500px;
+  height: 120px;
+  padding: 15px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  resize: none;
+  background: #111;
+  color: #00f7ff;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  box-shadow: inset 0 0 10px #00f7ff55;
 }
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+
+#form button {
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  background: #00f7ff;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px #00f7ff;
+}
+
+#form button:hover {
+  background: #fff;
+  color: #000;
+  box-shadow: 0 0 25px #00f7ff, 0 0 50px #00f7ff;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .hero h2 {
+    font-size: 1.2rem;
+  }
+  .profile-pic {
+    width: 140px;
+    height: 140px;
+  }
 }
