@@ -1,190 +1,114 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arthur Monteiro - Portfólio</title>
+  <title>Arthur Monteiro | Full Stack Developer</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Fonte hacker futurista -->
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
-<canvas id="matrix"></canvas>
- 
- <div class="container">
-    <!-- Foto -->
-    <img src="arthur.jpg" alt="Arthur Monteiro">
+  <!-- Fundo Matrix -->
+  <canvas id="matrix"></canvas>
 
-    <!-- Texto digitando -->
-    <h1 id="typing"></h1>
-    <h2 id="subtitulo"></h2>
+  <!-- Container principal -->
+  <div class="container">
+    <div class="profile">
+      <img src="arthur.jpg" alt="Arthur Monteiro" class="profile-pic">
+      <h1 id="typing"></h1>
+      <p class="subtitle">💻 Desenvolvedor Full Stack | Marketing Digital 🚀</p>
+    </div>
 
-    <!-- Botão idioma -->
-    <button id="lang-btn">EN</button>
-
-    <!-- Seções -->
-    <section id="about">
-      <h2>Sobre mim</h2>
-      <p id="about-text"></p>
+    <!-- Sobre mim -->
+    <section class="about">
+      <h2>👨‍💻 Sobre mim</h2>
+      <p>
+        Sou desenvolvedor Full Stack apaixonado por tecnologia, com experiência em front-end e back-end.  
+        Além da programação, já criei e gerenciei lojas de e-commerce (Shopify), incluindo dropshipping e nichos de saúde, beleza e cultura japonesa.  
+        Estou em constante aprendizado, pois para mim **não há limite para conhecimento**.
+      </p>
     </section>
 
-    <section id="projects">
-      <h2>Projetos</h2>
-      <ul id="projects-list"></ul>
+    <!-- Projetos -->
+    <section class="projects">
+      <h2>🚀 Projetos</h2>
+      <ul>
+        <li><a href="#">LoveIsBeautiful – Loja própria no nicho de saúde e beleza</a></li>
+        <li><a href="#">Dropshipping – Artigos japoneses e animes</a></li>
+        <li><a href="#">Portfólio – Este site que você está navegando ✨</a></li>
+      </ul>
     </section>
 
-    <section id="contact">
-      <h2>Contato</h2>
-      <p id="contact-text"></p>
-      <p>📱 WhatsApp: <a href="https://api.whatsapp.com/send?phone=5561982155039&text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es!!" target="_blank">+55 (61) 98215-5039</a></p>
-      <p>📧 Email: <a href="mailto:arthurdiaz.mg@gmail.com">arthurdiaz.mg@gmail.com</a></p>
+    <!-- Contato -->
+    <section class="contact">
+      <h2>📩 Contato</h2>
+      <p>Email: <a href="mailto:arthurdiaz.mg@gmail.com">arthurdiaz.mg@gmail.com</a></p>
+      <p>WhatsApp: <a href="https://api.whatsapp.com/send?phone=5561982155039&text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es!!" target="_blank">+55 61 98215-5039</a></p>
     </section>
 
-    <!-- Landing Page / Formulário -->
-    <section id="form-section">
-      <h2>Fale comigo</h2>
-      <form id="contact-form">
-        <input type="text" id="name" placeholder="Seu nome" required>
-        <input type="email" id="email" placeholder="Seu e-mail" required>
-        <select id="interest" required>
-          <option value="">Selecione o interesse</option>
-          <option value="desenvolvimento">Desenvolvimento de Site</option>
-          <option value="sistemas">Sistemas / Back-End</option>
-          <option value="marketing">Marketing Digital</option>
-          <option value="ecommerce">E-commerce / Loja Virtual</option>
-          <option value="outros">Outros</option>
-        </select>
-        <textarea id="message" placeholder="Escreva sua mensagem..." required></textarea>
-        <button type="submit">Enviar via WhatsApp 🚀</button>
+    <!-- Formulário -->
+    <section class="form">
+      <h2>💬 Fale comigo</h2>
+      <form action="https://api.whatsapp.com/send" method="get" target="_blank">
+        <input type="hidden" name="phone" value="5561982155039">
+        <textarea name="text" placeholder="Digite sua mensagem..." required></textarea>
+        <button type="submit">Enviar no WhatsApp</button>
       </form>
     </section>
   </div>
 
-  <!-- Script -->
+  <!-- Efeito Matrix -->
   <script>
-    const texts = {
-      pt: {
-        typing: "Olá, eu sou Arthur Monteiro 👨‍💻 Desenvolvedor Full Stack",
-        subtitulo: "Front-end & Back-end | Marketing Digital | Criador de Soluções 🚀",
-        about: `Sou desenvolvedor Full Stack com experiência em Front-end e Back-end, além de marketing digital e e-commerce. 
-                Já desenvolvi projetos de lojas virtuais no Shopify, como a LoveIsBeautiful no nicho de saúde e beleza, 
-                e também uma loja de dropshipping de artigos japoneses e anime. 
-                Estou sempre em busca de aprendizado contínuo e evolução constante, pois acredito que não há limites para o conhecimento.`,
-        projects: `
-          <li><b>LoveIsBeautiful</b> – Loja Shopify no nicho de saúde e beleza.</li>
-          <li>Loja de Dropshipping – Artigos japoneses e anime.</li>
-          <li>Portfólio – Este site que você está navegando 🚀.</li>`,
-        contact: `💼 LinkedIn: <a href="https://www.linkedin.com/in/arthurdmoont" target="_blank">linkedin.com/in/arthurdmoont</a><br>
-                  📷 Instagram: <a href="https://www.instagram.com/arthurdmoont" target="_blank">@arthurdmoont</a>`
-      },
-      en: {
-        typing: "Hi, I’m Arthur Monteiro 👨‍💻 Full Stack Developer",
-        subtitulo: "Front-end & Back-end | Digital Marketing | Solutions Creator 🚀",
-        about: `I’m a Full Stack Developer with experience in Front-end and Back-end, as well as digital marketing and e-commerce. 
-                I have built online stores on Shopify, including LoveIsBeautiful in the health and beauty niche, 
-                and a dropshipping store focused on Japanese and anime products. 
-                I’m always seeking continuous learning and improvement, as I believe knowledge has no limits.`,
-        projects: `
-          <li><b>LoveIsBeautiful</b> – Shopify store in the health and beauty niche.</li>
-          <li>Dropshipping Store – Japanese and anime products.</li>
-          <li>Portfolio – This website you are visiting 🚀.</li>`,
-        contact: `💼 LinkedIn: <a href="https://www.linkedin.com/in/arthurdmoont" target="_blank">linkedin.com/in/arthurdmoont</a><br>
-                  📷 Instagram: <a href="https://www.instagram.com/arthurdmoont" target="_blank">@arthurdmoont</a>`
-      }
-    };
-
-    let currentLang = "pt";
-    const typingElement = document.getElementById("typing");
-    const subtituloElement = document.getElementById("subtitulo");
-    const aboutElement = document.getElementById("about-text");
-    const projectsElement = document.getElementById("projects-list");
-    const contactElement = document.getElementById("contact-text");
-    const langBtn = document.getElementById("lang-btn");
-
-    function typeWriter(text, i, callback) {
-      if (i < text.length) {
-        typingElement.innerHTML = text.substring(0, i + 1);
-        setTimeout(() => typeWriter(text, i + 1, callback), 60);
-      } else if (callback) callback();
-    }
-
-    function setLanguage(lang) {
-      currentLang = lang;
-      typingElement.innerHTML = "";
-      typeWriter(texts[lang].typing, 0, () => {
-        subtituloElement.textContent = texts[lang].subtitulo;
-      });
-      aboutElement.innerHTML = texts[lang].about;
-      projectsElement.innerHTML = texts[lang].projects;
-      contactElement.innerHTML = texts[lang].contact;
-      langBtn.textContent = lang === "pt" ? "EN" : "PT";
-    }
-
-    langBtn.addEventListener("click", () => {
-      setLanguage(currentLang === "pt" ? "en" : "pt");
-    });
-
-    // Inicializa em PT
-    setLanguage("pt");
-
-    // Formulário envia para WhatsApp
-    document.getElementById("contact-form").addEventListener("submit", function(e) {
-      e.preventDefault();
-      const name = document.getElementById("name").value;
-      const email = document.getElementById("email").value;
-      const interest = document.getElementById("interest").value;
-      const message = document.getElementById("message").value;
-
-      const url = `https://api.whatsapp.com/send?phone=5561982155039&text=Olá%20Arthur!%20Meu%20nome%20é%20${encodeURIComponent(name)}.%0AEmail:%20${encodeURIComponent(email)}%0AInteresse:%20${encodeURIComponent(interest)}%0AMensagem:%20${encodeURIComponent(message)}`;
-      window.open(url, "_blank");
-    });
-  </script>
-<script>
-  // MATRIX EFFECT
-  const canvas = document.getElementById("matrix");
-  const ctx = canvas.getContext("2d");
-
-  // Tela cheia
-  canvas.height = window.innerHeight;
-  canvas.width = window.innerWidth;
-
-  // Letras que vão cair
-  const letters = "01ABCDEFGHIJKLMNOPQRSTUVWXYZアカサタナハマヤラワ0123456789";
-  const matrix = letters.split("");
-
-  const fontSize = 16;
-  const columns = canvas.width / fontSize;
-  const drops = [];
-
-  for (let x = 0; x < columns; x++) {
-    drops[x] = 1;
-  }
-
-  function draw() {
-    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    ctx.fillStyle = "#00f7ff"; // azul neon
-    ctx.font = fontSize + "px monospace";
-
-    for (let i = 0; i < drops.length; i++) {
-      const text = matrix[Math.floor(Math.random() * matrix.length)];
-      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-      if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-        drops[i] = 0;
-      }
-
-      drops[i]++;
-    }
-  }
-
-  setInterval(draw, 40);
-
-  // Ajusta o canvas se a tela mudar de tamanho
-  window.addEventListener("resize", () => {
+    const canvas = document.getElementById("matrix");
+    const ctx = canvas.getContext("2d");
     canvas.height = window.innerHeight;
     canvas.width = window.innerWidth;
-  });
-</script>
 
+    const letters = "01ABCDEFGHIJKLMNOPQRSTUVWXYZアカサタナハマヤラワ0123456789";
+    const matrix = letters.split("");
+    const fontSize = 16;
+    const columns = canvas.width / fontSize;
+    const drops = [];
+
+    for (let x = 0; x < columns; x++) drops[x] = 1;
+
+    function draw() {
+      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = "#00f7ff"; 
+      ctx.font = fontSize + "px Share Tech Mono";
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = matrix[Math.floor(Math.random() * matrix.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+    }
+    setInterval(draw, 40);
+    window.addEventListener("resize", () => {
+      canvas.height = window.innerHeight;
+      canvas.width = window.innerWidth;
+    });
+  </script>
+
+  <!-- Efeito de digitação -->
+  <script>
+    const text = "Olá, eu sou Arthur Monteiro 🚀";
+    let i = 0;
+    function typing() {
+      if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typing, 100);
+      }
+    }
+    typing();
+  </script>
 </body>
 </html>
