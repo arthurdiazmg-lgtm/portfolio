@@ -4,70 +4,85 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Arthur Monteiro - Portfólio</title>
-
   <style>
+    /* Fundo Matrix */
     body {
-      font-family: 'Courier New', monospace;
-      color: #fff;
       margin: 0;
       padding: 0;
-      overflow-x: hidden;
+      overflow: hidden;
+      font-family: 'Courier New', monospace;
+      color: #fff;
       background: #000;
     }
 
-    /* Fundo Matrix Canvas */
-    #matrix {
+    canvas {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: black;
       z-index: -1;
     }
 
     .container {
       position: relative;
       z-index: 1;
-      max-width: 800px;
+      max-width: 900px;
       margin: 0 auto;
+      padding: 40px 20px;
       text-align: center;
-      padding: 20px;
     }
 
     .profile-pic {
-      width: 150px;
-      height: 150px;
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
       border: 4px solid #00f7ff;
-      box-shadow: 0 0 25px #00f7ff;
+      box-shadow: 0 0 40px #00f7ff, 0 0 80px #00f7ff;
     }
 
     .name {
-      font-size: 2rem;
+      font-size: 2.5rem;
       color: #00f7ff;
-      margin-top: 15px;
-      text-shadow: 0 0 20px #00f7ff;
+      margin-top: 20px;
+      text-shadow: 0 0 20px #00f7ff, 0 0 40px #00f7ff;
     }
 
-    .tagline, .subtagline {
-      margin: 5px 0;
+    .tagline {
+      font-size: 1.2rem;
+      margin: 15px 0;
+      color: #fff;
+      text-shadow: 0 0 10px #00f7ff;
+    }
+
+    .typing {
+      font-size: 1rem;
+      color: #0ff;
+      margin: 15px 0;
+      white-space: pre-wrap;
+      border-right: 2px solid #0ff;
+      display: inline-block;
+      animation: blink 0.7s infinite;
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
     }
 
     .card {
       background: rgba(0, 0, 0, 0.7);
       border: 2px solid #00f7ff;
-      border-radius: 10px;
-      padding: 20px;
-      margin: 20px 0;
-      box-shadow: 0 0 20px #00f7ff;
+      border-radius: 12px;
+      padding: 25px;
+      margin: 25px 0;
+      box-shadow: 0 0 25px #00f7ff;
       text-align: left;
     }
 
     .card h3 {
       color: #00f7ff;
-      margin-bottom: 10px;
-      text-shadow: 0 0 10px #00f7ff;
+      margin-bottom: 12px;
+      text-shadow: 0 0 15px #00f7ff;
     }
 
     .card ul {
@@ -76,71 +91,70 @@
     }
 
     .card ul li {
-      margin: 8px 0;
+      margin: 10px 0;
+    }
+
+    .footer {
+      margin-top: 40px;
+      font-size: 0.8rem;
+      color: #aaa;
     }
   </style>
 </head>
 <body>
-  <!-- Fundo Matrix -->
   <canvas id="matrix"></canvas>
 
-  <!-- Conteúdo -->
   <div class="container">
-    <header>
-      <img src="arthur.jpg" alt="Arthur Monteiro" class="profile-pic">
-      <h1 class="name">Arthur Monteiro</h1>
-      <h2 class="tagline">💻 Fullstack Developer | 🛠️ Criador de Soluções</h2>
-      <p class="subtagline">Front-end & Back-end | Marketing Digital | E-commerce</p>
-    </header>
+    <img src="arthur.jpg" alt="Foto de Arthur Monteiro" class="profile-pic">
+    <h1 class="name">Arthur Monteiro</h1>
+    <p class="tagline">⚡ Fullstack Developer | 🚀 Criador de Soluções</p>
+    <p class="typing" id="typing"></p>
 
-    <section class="card">
-      <h3>🚀 Sobre mim</h3>
-      <p>
-        Sou desenvolvedor Fullstack com experiência em front-end e back-end, além de marketing digital e e-commerce. 
-        Já criei lojas na Shopify e projetos de dropshipping em nichos variados. 
-        Estou em constante evolução, buscando sempre unir tecnologia e inovação para criar soluções reais.
-      </p>
-    </section>
+    <div class="card">
+      <h3>💡 Sobre mim</h3>
+      <p>Sou desenvolvedor fullstack com experiência em front-end e back-end, além de marketing digital e e-commerce. Já criei lojas na Shopify e projetos de dropshipping e inovação digital. Estou em constante evolução, buscando sempre unir tecnologia e criatividade para criar soluções reais.</p>
+    </div>
 
-    <section class="card">
+    <div class="card">
       <h3>📂 Projetos</h3>
       <ul>
-        <li>❤️ <b>LovesBeautiful</b> – Loja de saúde & beleza</li>
-        <li>⚡ <b>Loja Anime</b> – Dropshipping temático</li>
-        <li>🌌 <b>Portfólio</b> – Este site com pegada futurista</li>
+        <li>❤️ LoveIsBeautiful – Loja de saúde e beleza</li>
+        <li>🗾 Loja Anime – Dropshipping temático</li>
+        <li>🌐 Portfólio – Este site com pegada futurista</li>
       </ul>
-    </section>
+    </div>
 
-    <section class="card">
-      <h3>📬 Contato</h3>
-      <p>Email: <b>arthurdiazmg.spt@gmail.com</b></p>
-      <p>WhatsApp: <b>+55 (61) 98221-3039</b></p>
-    </section>
+    <div class="card">
+      <h3>📞 Contato</h3>
+      <p>Email: <a href="mailto:arthurdiaz.mg@gmail.com" style="color:#0ff">arthurdiaz.mg@gmail.com</a></p>
+      <p>WhatsApp: <a href="https://api.whatsapp.com/send?phone=5561982155039&text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es!!" style="color:#0ff">+55 (61) 98215-5039</a></p>
+    </div>
+
+    <p class="footer">Feito com 💙 por Arthur Monteiro</p>
   </div>
 
-  <!-- Script Matrix Azul -->
   <script>
-    const canvas = document.getElementById("matrix");
-    const ctx = canvas.getContext("2d");
+    // Efeito Matrix
+    const canvas = document.getElementById('matrix');
+    const ctx = canvas.getContext('2d');
 
     canvas.height = window.innerHeight;
     canvas.width = window.innerWidth;
 
-    const letters = "01";
+    const letters = "01ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     const fontSize = 16;
     const columns = canvas.width / fontSize;
-
     const drops = Array(Math.floor(columns)).fill(1);
 
     function draw() {
       ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      ctx.fillStyle = "#00f7ff"; // Azul neon hacker
+      ctx.fillStyle = "#0ff"; // Azul Neon
       ctx.font = fontSize + "px monospace";
 
       for (let i = 0; i < drops.length; i++) {
-        const text = letters[Math.floor(Math.random() * letters.length)];
+        const text = letters.charAt(Math.floor(Math.random() * letters.length));
         ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
         if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
@@ -152,11 +166,19 @@
 
     setInterval(draw, 35);
 
-    // Ajusta ao redimensionar
-    window.addEventListener("resize", () => {
-      canvas.height = window.innerHeight;
-      canvas.width = window.innerWidth;
-    });
+    // Texto digitando automático
+    const text = "Front-end ⚡ | Back-end 🚀 | Marketing Digital 💻 | E-commerce 🛒";
+    let index = 0;
+
+    function typeEffect() {
+      if (index < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeEffect, 100);
+      }
+    }
+
+    window.onload = typeEffect;
   </script>
 </body>
 </html>
